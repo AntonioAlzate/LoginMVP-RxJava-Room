@@ -25,4 +25,38 @@ public class Usuario {
 
     @ColumnInfo(name = "rol")
     private String rol;
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    @NonNull
+    public String getIdentificacion() {
+        return identificacion;
+    }
+
+    public void setIdentificacion(@NonNull String identificacion) {
+        this.identificacion = identificacion;
+    }
+
+    @NonNull
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(@NonNull String password) {
+        this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }
