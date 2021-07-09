@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Login MVP Repository</string>
+    <string name="ingreso_identificación">Identificación</string>
+    <string name="ingreso_contrasenia">Contraseña</string>
+    <string name="titulo_registro">Datos Nuevo Usuario</string>
+    <string name="ingreso_nombre">Nombre</string>
+    <string name="ingreso_confirmacion_contrasenia">Confirmar Contraseña</string>
+    <string name="registrar_usuario">Registrar</string>
+    <string name="titulo_bienvenida">Bienvenido</string>
 </resources>

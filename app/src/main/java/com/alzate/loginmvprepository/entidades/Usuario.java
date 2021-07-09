@@ -15,6 +15,10 @@ public class Usuario {
     @ColumnInfo(name = "idUsuario")
     private int idUsuario;
 
+    @ColumnInfo(name = "nombre")
+    @NonNull
+    private String nombre;
+
     @ColumnInfo(name = "identificacion")
     @NonNull
     private String identificacion;
@@ -22,9 +26,6 @@ public class Usuario {
     @ColumnInfo(name = "password")
     @NonNull
     private String password;
-
-    @ColumnInfo(name = "rol")
-    private String rol;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -52,11 +53,12 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getRol() {
-        return rol;
+    @NonNull
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setNombre(@NonNull String nombre) {
+        this.nombre = nombre;
     }
 }
