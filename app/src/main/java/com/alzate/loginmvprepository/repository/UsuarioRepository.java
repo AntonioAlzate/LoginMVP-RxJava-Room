@@ -8,8 +8,8 @@ import com.alzate.loginmvprepository.persistencia.room.DataBaseHelper;
 
 import java.util.List;
 
-import io.reactivex.rxjava3.core.CompletableObserver;
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class UsuarioRepository {
@@ -21,34 +21,37 @@ public class UsuarioRepository {
     public UsuarioRepository(Application application) {
         DataBaseHelper db = DataBaseHelper.getDb(application);
         usuarioDAO = db.getUsuarioDao();
-
         this.application = application;
     }
 
     public void insertar(Usuario usuario) {
-        Observable.fromCallable(()-> {
+        Observable.fromCallable(() -> {
             usuarioDAO.insertar(usuario);
             return usuario;
         }).subscribeOn(Schedulers.computation()).subscribe();
     }
 
     public void eliminar(Usuario usuario) {
-        Observable.fromCallable(()-> {
+        Observable.fromCallable(() -> {
             usuarioDAO.eliminar(usuario);
             return usuario;
         }).subscribeOn(Schedulers.computation()).subscribe();
     }
 
     public void actualizar(Usuario usuario) {
-        Observable.fromCallable(()-> {
+        Observable.fromCallable(() -> {
             usuarioDAO.actualizar(usuario);
             return usuario;
         }).subscribeOn(Schedulers.computation()).subscribe();
+    }
+
+
+    public Single<Usuario> existeUsuarioCredenciales(String identificacion, String password) {
+        return usuarioDAO.verificarCredenciales(identificacion, password);
     }
 
     public List<Usuario> obtenerTodos() {
 
         return usuarioDAO.obtenerTodos();
     }
-
 }

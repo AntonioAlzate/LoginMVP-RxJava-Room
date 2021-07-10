@@ -10,6 +10,8 @@ import com.alzate.loginmvprepository.entidades.Usuario;
 
 import java.util.List;
 
+import io.reactivex.rxjava3.core.Single;
+
 @Dao
 public interface UsuarioDAO {
 
@@ -24,4 +26,10 @@ public interface UsuarioDAO {
 
     @Query("SELECT * FROM usuario")
     List<Usuario> obtenerTodos();
+
+    @Query("SELECT * FROM usuario where identificacion =:identificacion")
+    Usuario obtenerPorId(String identificacion);
+
+    @Query("SELECT * FROM usuario WHERE identificacion =:identificacion AND password =:password")
+    Single<Usuario> verificarCredenciales(String identificacion, String password);
 }
