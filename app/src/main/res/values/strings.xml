@@ -7,4 +7,8 @@
     <string name="ingreso_confirmacion_contrasenia">Confirmar Contraseña</string>
     <string name="registrar_usuario">Registrar</string>
     <string name="titulo_bienvenida">Bienvenido</string>
+    <string name="formato_pass_incorrecta">Formato Incorrecto</string>
+    <string name="requerido">Requerido</string>
+    <string name="identificacion_ya_existente">Identificacion Ya Registrada</string>
+    <string name="credenciales_incorrectas">Usuario y/o contraseña incorrectos</string>
 </resources>
